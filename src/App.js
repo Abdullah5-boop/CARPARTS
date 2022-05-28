@@ -16,9 +16,11 @@ import Payment from './Component/Payment/Payment';
 import DashbordReview from './Component/DasshBord/DashbordReview';
 import Profile from './Component/DasshBord/Profile'
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-import 'react-toastify/dist/ReactToastify.css'; import AllUser from './Component/DasshBord/AllUser';
+import AllUser from './Component/DasshBord/AllUser';
 import NoDiviceFound from './Component/NoDiviceFound';
+import ADDPriduct from './Component/DasshBord/ADDPriduct';
 export const UserContex = createContext("user");
 const queryClient = new QueryClient()
 function App() {
@@ -39,6 +41,7 @@ function App() {
               <Route index  element={<Profile></Profile>}></Route>
               <Route path='orders/:email' element={<Order></Order>}></Route>
               <Route path='alluser' element={<AllUser></AllUser>}></Route>
+              <Route path='addproduct' element={<ADDPriduct></ADDPriduct>}></Route>
             </Route>
             <Route path='/orders' element={<RequireAuth><Order></Order></RequireAuth>}></Route>
             <Route path='*'element={<NoDiviceFound></NoDiviceFound>}></Route>

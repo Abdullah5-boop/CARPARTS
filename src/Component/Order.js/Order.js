@@ -19,19 +19,19 @@ const Order = () => {
 
         return <Loading></Loading>
     }
-    
+
     if (error) {
         console.log(error)
     }
     // console.log(email)
-    
+
     const handlepayment = (data) => {
         const _id = data._id;
         // const email = user?.email;
         navigate(`/payment/${email}/${_id}`)
     }
-    
-    
+
+
     if (Order.length === 0) {
         refetch()
     }
@@ -44,25 +44,25 @@ const Order = () => {
             method: 'delete',
             headers: {
                 'content-type': 'application/json',
-                
+
             },
             body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(data => {
-            refetch()
-            console.log(data)
-        })
-        
-        
+            .then(res => res.json())
+            .then(data => {
+                refetch()
+                console.log(data)
+            })
+
+
     }
     console.log(Order)
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     return (
         <div >
 
@@ -75,7 +75,7 @@ const Order = () => {
                                 <th>Number </th>
                                 <th>Product Name</th>
                                 <th>Quantity</th>
-        
+
                                 <th>Delete</th>
                                 <th>Payment</th>
                                 {
@@ -93,11 +93,11 @@ const Order = () => {
                                         <td>{data?.quantity}</td>
                                         <td>
                                             {
-                                                data.paid ? "Not applicable" : 
-                                                <>
-                                                {/* {confirm("hekoio")} */}
-                                                <button onClick={() => handleDeleteOrder(data)}  className='btn'>delete</button>
-                                                </>
+                                                data.paid ? "Not applicable" :
+                                                    <>
+                                                        {/* {confirm("hekoio")} */}
+                                                        <button onClick={() => handleDeleteOrder(data)} className='btn'>delete</button>
+                                                    </>
                                             }
                                         </td>
                                         <td>
@@ -107,11 +107,11 @@ const Order = () => {
                                             }
                                         </td>
                                         <td>
-                                            <label onClick={ () => 
-                                                
+                                            <label onClick={() =>
+
                                                 setreview(data)
-                                                
-                                                } for="review-modal" class="btn modal-button">Add Review </label>
+
+                                            } for="review-modal" class="btn modal-button">Add Review </label>
                                         </td>
                                     </tr>)
                             }

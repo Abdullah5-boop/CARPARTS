@@ -44,19 +44,27 @@ const Dashnord = () => {
                             {/* <li><Link to='profile'>profile</Link></li> */}
                             <li><button onClick={handleclick}>Order</button></li>
                             {/* <li> <Link to='alluser'>All User</Link></li> */}
-                            <li>
-                                {
-                                    UserList?.map(data => <>
-                                        {
-                                            data.type === 'admin' ?
-                                                <Link to='alluser'>All User</Link>
 
-                                                : "user"
-                                        }
+                            {
+                                UserList?.map(data => <>
+                                    {
+                                        data.type === 'admin' ?
+                                            <li> <Link to='alluser'>All User</Link></li>
 
-                                    </>)
-                                }
-                            </li>
+                                            : "user"
+                                    }
+                                </>)
+                            }
+                            {
+                                UserList?.map(data => <>
+                                    {
+                                        data.type === 'admin' ?
+                                            <li> <Link to='addproduct'>ADD product</Link></li>
+                                            : "user"
+                                    }
+                                </>)
+                            }
+
                         </ul>
 
                     </div>

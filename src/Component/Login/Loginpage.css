@@ -1,0 +1,22 @@
+.imgcontainerlogin img{
+    width: 45vw;
+    height: 80vh;
+    border: 1px solid;
+    border-radius: 20px;
+
+
+}
+@media only screen and (max-width: 600px){
+    .imgcontainerlogin{
+        display: flex;
+        justify-content: center;
+    }
+    .imgcontainerlogin img{
+        width:80vw;
+        height: 40vh;
+        border: 1px solid;
+        border-radius: 20px;
+    
+    
+    }
+}

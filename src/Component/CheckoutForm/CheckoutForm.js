@@ -11,18 +11,18 @@ const CheckoutForm = ({ price, email, handlepaymentupdate, id }) => {
     const [success, setsuccess] = useState('')
     const [payment_intend, setpayment_intend] = useState()
     const [tid, settid] = useState('')
-    const [isloading,setloading]=useState(false);
+    const [isloading, setloading] = useState(false);
     const elements = useElements()
     const mainprice = price * 100
-const navigate=useNavigate()
+    const navigate = useNavigate()
 
 
-console.log(tid)
+    console.log(tid)
 
     useEffect(() => {
 
 
-        fetch("http://localhost:5000/create-payment-intent",
+        fetch("https://shielded-beyond-16866.herokuapp.com/create-payment-intent",
             {
                 headers: { 'Content-Type': 'application/json' },
                 method: "POST",
@@ -83,12 +83,12 @@ console.log(tid)
             toast.success("payment Successfull")
             // console.log(paymentIntent)
             setpayment_intend(paymentIntent)
-            const data={email,tid,paid:true,id}
-            fetch(`http://localhost:5000/ordersupdate`, {
+            const data = { email, tid, paid: true, id }
+            fetch(`https://shielded-beyond-16866.herokuapp.com/ordersupdate`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
-                
+
                 },
                 body: JSON.stringify(data)
             }).then(res => res.json())
@@ -97,7 +97,7 @@ console.log(tid)
                     console.log(data);
 
                 })
-                // navigate('/orders')
+            // navigate('/orders')
 
         }
 
@@ -134,7 +134,7 @@ console.log(tid)
                 errors && <p className='text-red-500'>{errors}</p>
             }
             {
-                
+
                 success && <p className='text-green-500'>{success}</p>
             }
             <ToastContainer />

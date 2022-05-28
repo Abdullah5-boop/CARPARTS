@@ -15,7 +15,7 @@ const Registerpage = () => {
     const [password, setpassword] = useState('')
     const [confirmpassword, setconfirmpassword] = useState('')
     const [error, setserror] = useState('')
-    const { GoogleSignin,AddfirebaseUser } = FirebaseHook()
+    const { GoogleSignin, AddfirebaseUser } = FirebaseHook()
 
 
 
@@ -41,17 +41,17 @@ const Registerpage = () => {
 
                     const type = "user";
                     const firebaseuser = { email: email, type: type }
-                    fetch("http://localhost:5000/register",
+                    fetch("https://shielded-beyond-16866.herokuapp.com/register",
                         {
                             headers: {
-                               
+
                                 'Content-Type': 'application/json'
                             },
                             method: "PUT",
                             body: JSON.stringify(firebaseuser)
                         })
                         .then(res => res.json())
-                        .then(data => console.log("register data = ",data))
+                        .then(data => console.log("register data = ", data))
                         .catch(error => console.log(error))
                     AddfirebaseUser(user)
                 }

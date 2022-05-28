@@ -14,7 +14,7 @@ const Nav = () => {
     const [HandleNav, setHandleNav] = useState(false)
     const menubar = <>
         <li className='text-black'><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/product'>product</NavLink></li>
+        <li><NavLink to='/product'>Blog</NavLink></li>
         {/* <li><NavLink to='/orders'>orders</NavLink></li> */}
 
 

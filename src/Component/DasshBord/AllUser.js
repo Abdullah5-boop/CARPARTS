@@ -4,10 +4,10 @@ import Loading from '../Loading/Loading';
 
 const AllUser = () => {
 
-    const { isLoading, error, data: customer, refetch } = useQuery('repoData', () => fetch('http://localhost:5000/alluser').then(res => res.json()))
+    const { isLoading, error, data: customer, refetch } = useQuery('repoData', () => fetch('https://shielded-beyond-16866.herokuapp.com/alluser').then(res => res.json()))
     const makeadmin = (data) => {
         console.log(data)
-        fetch("http://localhost:5000/alluser",
+        fetch("https://shielded-beyond-16866.herokuapp.com/alluser",
             {
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ const AllUser = () => {
         return <Loading></Loading>
     }
 
-    const Allcustomer=customer?.filter(data=>data.email!=null)
+    const Allcustomer = customer?.filter(data => data.email != null)
 
 
 
@@ -46,7 +46,7 @@ const AllUser = () => {
                             <th>Email</th>
                             <th>Type</th>
                             <th>Make Admin</th>
-                          
+
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +65,7 @@ const AllUser = () => {
                                                 " this is not user"
                                         }
                                     </td>
-                                  
+
 
                                 </tr>
                             </>

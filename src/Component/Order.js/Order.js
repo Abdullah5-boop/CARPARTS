@@ -10,22 +10,20 @@ import Nav2 from '../Nav/Nav2';
 
 const Order = () => {
     const [user] = useAuthState(auth)
-    const {Order,isLoading,error,refetch} = OrderHook()
+    const { Order, isLoading, error, refetch } = OrderHook()
     const [payment, setpayment] = useState({})
     const [review, setreview] = useState([])
     const navigate = useNavigate()
     const email = user?.email;
-if(isLoading)
-{
-    
-    return <Loading></Loading>
-}
+    if (isLoading) {
 
-if(error)
-{
-    console.log(error)
-}
-// console.log(email)
+        return <Loading></Loading>
+    }
+
+    if (error) {
+        console.log(error)
+    }
+    // console.log(email)
 
     const handlepayment = (data) => {
         const _id = data._id;
@@ -34,14 +32,14 @@ if(error)
     }
 
 
-if(Order.length===0){
-    refetch()
-}
+    if (Order.length === 0) {
+        refetch()
+    }
 
     const handleDeleteOrder = (data) => {
         const _id = data._id;
         console.log(_id)
-        const url = `http://localhost:5000/user/${_id}`
+        const url = `https://shielded-beyond-16866.herokuapp.com/user/${_id}`
         fetch(url, {
             method: 'delete',
             headers: {
@@ -50,14 +48,15 @@ if(Order.length===0){
             },
             body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(data=>{
-            refetch()
-            console.log(data)})
+            .then(res => res.json())
+            .then(data => {
+                refetch()
+                console.log(data)
+            })
 
 
     }
-// console.log(Order)
+    // console.log(Order)
 
 
 

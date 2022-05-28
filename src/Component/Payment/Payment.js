@@ -5,7 +5,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 const Payment = () => {
-    
+
     const stripePromise = loadStripe('pk_test_51L32NxLceKxAIYC505P022018V0bZyslvLRHzwLB9rjEliaGMoD16om0jN2HI7hdVLN7adjiBl3hdhSlHELLfYUy00K0QiZo8X');
     const data = useParams()
     const [products, setproduct] = useState([])
@@ -14,12 +14,12 @@ const Payment = () => {
     const id = data?.id
 
     const price = parseInt(product?.quantity) * parseInt(product?.price)
-    const handlepaymentupdate=(data)=>{
+    const handlepaymentupdate = (data) => {
         console.log(data)
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/payment/${email}/${id}`
+        const url = `https://shielded-beyond-16866.herokuapp.com/payment/${email}/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setproduct(data))
@@ -45,7 +45,7 @@ const Payment = () => {
                         <div class="card w-96 bg-base-100 shadow-xl">
                             <div class="card-body">
                                 <Elements stripe={stripePromise}>
-                                    <CheckoutForm price={price} email={email} handlepaymentupdate={handlepaymentupdate} id={id}/>
+                                    <CheckoutForm price={price} email={email} handlepaymentupdate={handlepaymentupdate} id={id} />
                                 </Elements>
                             </div>
                         </div>

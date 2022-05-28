@@ -11,17 +11,17 @@ const OrderHook = () => {
     // const [Order, setorder] = useState([])
     const email = user?.email;
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/orders/${email}`)
+    //     fetch(`https://shielded-beyond-16866.herokuapp.com/orders/${email}`)
     //     .then(res=>res.json())
     //     .then(data=>setorder(data))
     // },[])
-    const { isLoading, error, data: Order,refetch } = useQuery('repoData', () =>
-        fetch(`http://localhost:5000/orders/${email}`).then(res =>
+    const { isLoading, error, data: Order, refetch } = useQuery('repoData', () =>
+        fetch(`https://shielded-beyond-16866.herokuapp.com/orders/${email}`).then(res =>
             res.json()
         )
     )
     console.log(Order)
-    
-    return {Order,isLoading,error,refetch};
+
+    return { Order, isLoading, error, refetch };
 }
 export default OrderHook

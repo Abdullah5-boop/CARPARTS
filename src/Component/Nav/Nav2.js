@@ -12,7 +12,7 @@ const Nav2 = () => {
     const [user] = useAuthState(auth)
     const menubar = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/product'>product</NavLink></li>
+        <li><NavLink to='/product'>Blog</NavLink></li>
         {/* <li><NavLink to='/orders/'>orders</NavLink></li> */}
         {/* <li><NavLink to='/Login'>Login</NavLink></li> */}
         {

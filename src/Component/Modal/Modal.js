@@ -35,7 +35,7 @@ const Modal = ({ data, setmain }) => {
         if (value < max && value > min) {
 
             seterror("")
-            fetch("http://localhost:5000/order",
+            fetch("https://shielded-beyond-16866.herokuapp.com/order",
                 {
                     headers: {
 
@@ -73,35 +73,35 @@ const Modal = ({ data, setmain }) => {
                 <div class="modal-box">
                     {
                         // varify ?
-                            <div className='text-center'>
-                                <h2 className='text-center'>Order Now</h2>
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                    <input value={email} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs mb-3" />
-                                    <input value={data.Engine} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs mb-3" />
-                                    <input
-                                        type="text" placeholder="Location" class="input input-bordered w-full max-w-xs mb-3"
-                                        {...register("Location", { required: true })} />
-                                    <input
-                                        type="number" placeholder="Amount" class="input input-bordered w-full max-w-xs mb-3"
-                                        {...register("quantity", { required: true })} />
-                                    <div>
-                                        {/* {errors?.Location?.type === 'required' && "value is not applicable"}
+                        <div className='text-center'>
+                            <h2 className='text-center'>Order Now</h2>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <input value={email} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs mb-3" />
+                                <input value={data.Engine} type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs mb-3" />
+                                <input
+                                    type="text" placeholder="Location" class="input input-bordered w-full max-w-xs mb-3"
+                                    {...register("Location", { required: true })} />
+                                <input
+                                    type="number" placeholder="Amount" class="input input-bordered w-full max-w-xs mb-3"
+                                    {...register("quantity", { required: true })} />
+                                <div>
+                                    {/* {errors?.Location?.type === 'required' && "value is not applicable"}
                                         {errors?.quantity?.type === 'required' && "Please increase the quantity "} */}
-                                    </div>
-                                    <h2 className='text-red-500 '>
-                                        {error ? error : ""}
-                                    </h2>
-                                    <div class="modal-action flex justify-center  ">
+                                </div>
+                                <h2 className='text-red-500 '>
+                                    {error ? error : ""}
+                                </h2>
+                                <div class="modal-action flex justify-center  ">
 
 
-                                        <input class="btn btn-success" type="submit" />
-                                    </div>
-                                </form>
+                                    <input class="btn btn-success" type="submit" />
+                                </div>
+                            </form>
 
 
-                            </div>
-                            // :
-                            // <h1 className='text-center font-bold text-red-500'>Email is not verified</h1>
+                        </div>
+                        // :
+                        // <h1 className='text-center font-bold text-red-500'>Email is not verified</h1>
                     }
 
                     <label for="my-modal" class="btn btn-sm btn-circle absolute right-2 top-2 ">✕</label>

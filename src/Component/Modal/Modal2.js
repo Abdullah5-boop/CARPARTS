@@ -6,7 +6,7 @@ const Modal2 = ({ data }) => {
 
     const handleAddReview = () => {
         const review = { review: reviewtextarea, productName: data?.Engine, email: data?.email, id: data?._id }
-        fetch("http://localhost:5000/review",
+        fetch("https://shielded-beyond-16866.herokuapp.com/review",
             {
                 headers: {
                     'Content-Type': 'application/json'
@@ -14,8 +14,8 @@ const Modal2 = ({ data }) => {
                 method: "PUT",
                 body: JSON.stringify(review)
             })
-            .then(res=>res.json())
-            .then(data=>console.log(data))
+            .then(res => res.json())
+            .then(data => console.log(data))
 
     }
     return (

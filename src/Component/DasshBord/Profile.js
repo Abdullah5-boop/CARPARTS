@@ -68,7 +68,7 @@ const Profile = () => {
                 console.log(data?.data?.url)
                 if (data.success) {
                     const updatedetels = { img: data?.data?.url, email: email, Slink: link }
-                    fetch("http://localhost:5000/updatedetails",
+                    fetch("https://shielded-beyond-16866.herokuapp.com/updatedetails",
                         {
                             headers: {
 
@@ -95,11 +95,11 @@ const Profile = () => {
 
 
 
-// console.log(Order)
+    // console.log(Order)
 
     return (
         <div>
-           <h3 className='text-center font-bold text-3xl mt-5 mb-12'>This is profile page</h3>
+            <h3 className='text-center font-bold text-3xl mt-5 mb-12'>This is profile page</h3>
             {
                 Order?.map(data => <>
 
@@ -108,10 +108,10 @@ const Profile = () => {
                             <img className='object-cover h-48 w-96' src={data.img} alt="" />
                         </div>
                         <div >
-                            <h1  className='text-xl font-bold mt-8'>Email :  {user?.email} </h1>
+                            <h1 className='text-xl font-bold mt-8'>Email :  {user?.email} </h1>
                             <h1 className='mt-2' >type : {data?.type}</h1>
-                           Social Link : <a className='link' target="blank" href={data?.Slink}>Click Here</a> 
-                           
+                            Social Link : <a className='link' target="blank" href={data?.Slink}>Click Here</a>
+
                         </div>
                     </div>
                 </>)

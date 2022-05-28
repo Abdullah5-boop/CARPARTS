@@ -43,7 +43,7 @@ const FirebaseHook = () => {
                 //     const type = "user";
                 //     const firebaseuser = { email: user?.email, type: type }
                 //     console.log("this is firebase object", firebaseuser)
-                //     fetch("http://localhost:5000/register",
+                //     fetch("https://shielded-beyond-16866.herokuapp.com/register",
                 //         {
                 //             headers: {
 
@@ -56,7 +56,7 @@ const FirebaseHook = () => {
                 //         .then(data => {
                 //             console.log("user-4", data)
                 //             if (data?.acknowledged) {
-                //                 fetch("http://localhost:5000/registerstorage",
+                //                 fetch("https://shielded-beyond-16866.herokuapp.com/registerstorage",
                 //                     {
                 //                         headers: {
 
@@ -74,7 +74,7 @@ const FirebaseHook = () => {
                 //                         else {
                 //                             console.log('Not exist exist ')
 
-                //                             fetch("http://localhost:5000/postregisterstorage",
+                //                             fetch("https://shielded-beyond-16866.herokuapp.com/postregisterstorage",
                 //                                 {
                 //                                     headers: {
 
@@ -96,8 +96,7 @@ const FirebaseHook = () => {
                 //         })
                 //         .catch(error => console.log(error))
                 // }
-                if(user)
-                {
+                if (user) {
 
                     AddfirebaseUser(user)
                 }
@@ -117,7 +116,7 @@ const FirebaseHook = () => {
             const type = "user";
             const firebaseuser = { email: user?.email, type: type }
             console.log("this is firebase object", firebaseuser)
-            fetch("http://localhost:5000/register",
+            fetch("https://shielded-beyond-16866.herokuapp.com/register",
                 {
                     headers: {
 
@@ -130,7 +129,7 @@ const FirebaseHook = () => {
                 .then(data => {
                     console.log("user-4", data)
                     if (data?.acknowledged) {
-                        fetch("http://localhost:5000/registerstorage",
+                        fetch("https://shielded-beyond-16866.herokuapp.com/registerstorage",
                             {
                                 headers: {
 
@@ -148,7 +147,7 @@ const FirebaseHook = () => {
                                 else {
                                     console.log('Not exist exist ')
 
-                                    fetch("http://localhost:5000/postregisterstorage",
+                                    fetch("https://shielded-beyond-16866.herokuapp.com/postregisterstorage",
                                         {
                                             headers: {
 

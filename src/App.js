@@ -21,6 +21,7 @@ import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import AllUser from './Component/DasshBord/AllUser';
 import NoDiviceFound from './Component/NoDiviceFound';
 import ADDPriduct from './Component/DasshBord/ADDPriduct';
+import INfo from './Component/Info.js/INfo';
 export const UserContex = createContext("user");
 const queryClient = new QueryClient()
 function App() {
@@ -34,9 +35,11 @@ function App() {
             <Route path='/product' element={<RequireAuth><Productpage></Productpage></RequireAuth>}></Route>
             <Route path='/orders/:email' element={<RequireAuth><Order></Order></RequireAuth>}></Route>
             <Route path='/login' element={<Loginpage></Loginpage>}></Route>
+            <Route path='/info' element={<INfo></INfo>}></Route>
             <Route path='/register' element={<Registerpage></Registerpage>}></Route>
             <Route path='/payment/:email/:id' element={<Payment></Payment>}></Route>
             <Route path='/dashbord' element={<Dashnord></Dashnord>}>
+            {/* <Route path='/dashbord' element={<Dashnord></Dashnord>}> */}
               {/* <Route index element={<DashbordReview></DashbordReview>}></Route> */}
               <Route index  element={<Profile></Profile>}></Route>
               <Route path='orders/:email' element={<Order></Order>}></Route>

@@ -41,7 +41,7 @@ const Nav2 = () => {
                             {/* <li>Banner</li> */}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl lg:mr-40">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl lg:mr-40">Car Parts </a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal p-0 mr-5 ">

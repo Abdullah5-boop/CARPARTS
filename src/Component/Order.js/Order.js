@@ -39,7 +39,7 @@ const Order = () => {
     const handleDeleteOrder = (data) => {
         const _id = data._id;
         console.log(_id)
-        const url = `https://shielded-beyond-16866.herokuapp.com/user/${_id}`
+        const url = `http://localhost:5000/user/${_id}`
         fetch(url, {
             method: 'delete',
             headers: {
@@ -66,7 +66,7 @@ const Order = () => {
     return (
         <div >
 
-            <section className=''>
+            <section data-aos="fade-up" className=''>
                 <div class="overflow-x-auto">
                     <table class="table w-full">
 

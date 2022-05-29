@@ -68,7 +68,7 @@ const Profile = () => {
                 console.log(data?.data?.url)
                 if (data.success) {
                     const updatedetels = { img: data?.data?.url, email: email, Slink: link }
-                    fetch("https://shielded-beyond-16866.herokuapp.com/updatedetails",
+                    fetch("http://localhost:5000/updatedetails",
                         {
                             headers: {
 
@@ -98,7 +98,7 @@ const Profile = () => {
     // console.log(Order)
 
     return (
-        <div>
+        <div data-aos="fade-right">
             <h3 className='text-center font-bold text-3xl mt-5 mb-12'>This is profile page</h3>
             {
                 Order?.map(data => <>

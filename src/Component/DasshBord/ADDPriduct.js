@@ -1,7 +1,12 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ADDPriduct = () => {
+    const handleadd = () => {
+        console.log('hello world ')
+    }
     const handleaddproduct = (event) => {
         event.preventDefault()
         const Engine = event.target.Engine.value;
@@ -12,8 +17,15 @@ const ADDPriduct = () => {
         const discription = event.target.dis.value
         const newproduct = { Engine, img, min, max, discription, price }
         console.log(newproduct)
+        event.target.dis.value = ""
+        event.target.Engine.value = ""
+        event.target.price.value = ""
+        event.target.img.value = ""
+        event.target.min.value = ""
+        event.target.dis.value = ""
+        event.target.max.value = ""
 
-        fetch("https://shielded-beyond-16866.herokuapp.com/addpost",
+        fetch("http://localhost:5000/addpost",
             {
                 headers: {
 
@@ -31,7 +43,7 @@ const ADDPriduct = () => {
     }
 
     return (
-        <div className='text-center'>
+        <div data-aos="zoom-in" className='text-center'>
             <h1 className=' font-bold text-3xl mb-12'> Add Product  </h1>
             <div className=''>
                 <form className='' onSubmit={handleaddproduct}>
@@ -45,6 +57,7 @@ const ADDPriduct = () => {
                     <button class="btn btn-wide mt-4">Wide</button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };

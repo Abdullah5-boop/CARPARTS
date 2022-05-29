@@ -6,7 +6,7 @@ const ProfileHook = () => {
     const [user] = useAuthState(auth)
     const email = user?.email;
     const { isLoading, error, data: Order, refetch } = useQuery('ProfileHook', () =>
-        fetch(`https://shielded-beyond-16866.herokuapp.com/profile/${email}`).then(res =>
+        fetch(`http://localhost:5000/profile/${email}`).then(res =>
             res.json()
         )
     )

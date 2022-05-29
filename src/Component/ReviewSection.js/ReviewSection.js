@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading';
 const ReviewSection = ({ email }) => {
 
     const { isLoading, error, data: reviews } = useQuery('reviews', () =>
-        fetch(`https://shielded-beyond-16866.herokuapp.com/review/${email}`).then(res =>
+        fetch(`http://localhost:5000/review/${email}`).then(res =>
             res.json()
         )
     )

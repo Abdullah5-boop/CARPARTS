@@ -16,12 +16,16 @@ import Payment from './Component/Payment/Payment';
 import DashbordReview from './Component/DasshBord/DashbordReview';
 import Profile from './Component/DasshBord/Profile'
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
+import 'react-toastify/dist/ReactToastify.css';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import AllUser from './Component/DasshBord/AllUser';
 import NoDiviceFound from './Component/NoDiviceFound';
 import ADDPriduct from './Component/DasshBord/ADDPriduct';
 import INfo from './Component/Info.js/INfo';
+import Shift from './Component/DasshBord/Shift';
+import Pending from './Component/Manage/Pending';
+import Store from './Component/Store/Store';
+
 export const UserContex = createContext("user");
 const queryClient = new QueryClient()
 function App() {
@@ -36,18 +40,19 @@ function App() {
             <Route path='/orders/:email' element={<RequireAuth><Order></Order></RequireAuth>}></Route>
             <Route path='/login' element={<Loginpage></Loginpage>}></Route>
             <Route path='/info' element={<INfo></INfo>}></Route>
+            <Route path='/store' element={<Store></Store>}></Route>
             <Route path='/register' element={<Registerpage></Registerpage>}></Route>
             <Route path='/payment/:email/:id' element={<Payment></Payment>}></Route>
             <Route path='/dashbord' element={<Dashnord></Dashnord>}>
-            {/* <Route path='/dashbord' element={<Dashnord></Dashnord>}> */}
-              {/* <Route index element={<DashbordReview></DashbordReview>}></Route> */}
-              <Route index  element={<Profile></Profile>}></Route>
+              <Route index element={<Profile></Profile>}></Route>
               <Route path='orders/:email' element={<Order></Order>}></Route>
               <Route path='alluser' element={<AllUser></AllUser>}></Route>
               <Route path='addproduct' element={<ADDPriduct></ADDPriduct>}></Route>
+              <Route path='Pending' element={<Pending></Pending>}></Route>
+              <Route path='Shift' element={<Shift></Shift>}></Route>
             </Route>
             <Route path='/orders' element={<RequireAuth><Order></Order></RequireAuth>}></Route>
-            <Route path='*'element={<NoDiviceFound></NoDiviceFound>}></Route>
+            <Route path='*' element={<NoDiviceFound></NoDiviceFound>}></Route>
           </Routes>
         </UserContex.Provider>
       </QueryClientProvider>

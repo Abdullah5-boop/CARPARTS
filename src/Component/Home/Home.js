@@ -53,7 +53,7 @@ const Home = () => {
                 <h2 className='font-bold text-center text-4xl mb-72'>Our Products</h2>
                 <div className=' flex justify-center items-center'>
 
-                    <ul className=' cardpositioning grid gap-10 lg:grid-cols-4 justify-center'>
+                    <ul  data-aos="fade-up" className=' cardpositioning grid gap-10 lg:grid-cols-4 justify-center'>
 
                         {
                             products.map(data => <HomapageProductView
@@ -63,21 +63,21 @@ const Home = () => {
                             ></HomapageProductView>)
                         }
                         {
-                            buyproduct && <Modal setmain={setmain} data={buyproduct}></Modal>
+                            buyproduct && <Modal data={buyproduct}></Modal>
                         }
 
                     </ul>
                 </div>
             </section>
-            <section className='mr-2 lg:mx-6'>
+            <section  className='mr-2 lg:mx-6'>
                 <ReviewSection email={email}></ReviewSection>
             </section>
-            <section className=''>
+            <section data-aos="fade-down" className=''>
                 <h2 className='text-center font-bold text-5xl text-primary mt-36'>Our Performance </h2>
                 <h2 className='text-center font-bold text-3xl my-12'>Our Goal is customer satisfaction </h2>
                 <Business></Business>
             </section>
-            <about><About></About></about>
+            <about  data-aos="fade-up-right"><About></About></about>
             <section><Contact></Contact></section>
             <footer className='mt-12'>
                 <Footer></Footer>

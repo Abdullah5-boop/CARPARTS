@@ -22,7 +22,7 @@ const CheckoutForm = ({ price, email, handlepaymentupdate, id }) => {
     useEffect(() => {
 
 
-        fetch("https://shielded-beyond-16866.herokuapp.com/create-payment-intent",
+        fetch("http://localhost:5000/create-payment-intent",
             {
                 headers: { 'Content-Type': 'application/json' },
                 method: "POST",
@@ -84,7 +84,7 @@ const CheckoutForm = ({ price, email, handlepaymentupdate, id }) => {
             // console.log(paymentIntent)
             setpayment_intend(paymentIntent)
             const data = { email, tid, paid: true, id }
-            fetch(`https://shielded-beyond-16866.herokuapp.com/ordersupdate`, {
+            fetch(`http://localhost:5000/ordersupdate`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

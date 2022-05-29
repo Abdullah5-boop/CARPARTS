@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';;
 
-const Modal = ({ data, setmain }) => {
+const Modal = ({ data}) => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [productverify, setproductverify] = useState(false);
     const [user] = useAuthState(auth)
@@ -35,7 +35,7 @@ const Modal = ({ data, setmain }) => {
         if (value < max && value > min) {
 
             seterror("")
-            fetch("https://shielded-beyond-16866.herokuapp.com/order",
+            fetch("http://localhost:5000/order",
                 {
                     headers: {
 

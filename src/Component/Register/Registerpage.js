@@ -41,7 +41,7 @@ const Registerpage = () => {
 
                     const type = "user";
                     const firebaseuser = { email: email, type: type }
-                    fetch("https://shielded-beyond-16866.herokuapp.com/register",
+                    fetch("http://localhost:5000/register",
                         {
                             headers: {
 

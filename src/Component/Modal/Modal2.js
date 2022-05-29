@@ -6,7 +6,7 @@ const Modal2 = ({ data }) => {
 
     const handleAddReview = () => {
         const review = { review: reviewtextarea, productName: data?.Engine, email: data?.email, id: data?._id }
-        fetch("https://shielded-beyond-16866.herokuapp.com/review",
+        fetch("http://localhost:5000/review",
             {
                 headers: {
                     'Content-Type': 'application/json'

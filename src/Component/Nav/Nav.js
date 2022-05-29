@@ -15,8 +15,9 @@ const Nav = () => {
     const menubar = <>
         <li className='text-black'><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/product'>Blog</NavLink></li>
-        {/* <li><NavLink to='/orders'>orders</NavLink></li> */}
-        
+        <li><NavLink to='/store'>Store</NavLink></li>
+        <li><NavLink to='/info'>Myself</NavLink></li>
+
         {
             user?.uid ? <>
                 <li><NavLink to='/dashbord'>DashBord</NavLink></li>
@@ -29,7 +30,6 @@ const Nav = () => {
                 </>
         }
         
-
     </>
     return (
         <div className=''>

@@ -19,7 +19,7 @@ const Payment = () => {
     }
 
     useEffect(() => {
-        const url = `https://shielded-beyond-16866.herokuapp.com/payment/${email}/${id}`
+        const url = `http://localhost:5000/payment/${email}/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setproduct(data))

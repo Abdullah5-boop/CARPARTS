@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import DashBordHook from '../Hooks/DashBordHook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 const Shift = () => {
     const { isLoading, error, data: AllSHIFT, refetch } = useQuery('PeendingData', () =>
         fetch('http://localhost:5000/AllShift').then(res =>
@@ -47,7 +47,7 @@ const Shift = () => {
                     </table>
                 </div>
             </section>
-           
+
         </div>
     );
 };

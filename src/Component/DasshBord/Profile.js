@@ -80,18 +80,15 @@ const Profile = () => {
                         .then(res => res.json())
                         .then(data => {
                             setimgsuccess(data)
-
+                            refetch()
                         })
                         .catch(error => console.log(error))
                 }
-
-
-
             })
             .catch(error => console.log(error))
 
     }
-    if (imgsuccess) { refetch() }
+    // if (imgsuccess) { refetch() }
 
 
 
